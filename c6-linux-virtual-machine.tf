@@ -3,7 +3,7 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
   name                = local.vm_name
   computer_name       = local.vm_name # Hostname of the VM
   resource_group_name = azurerm_resource_group.vth-myrg.name
-  location            = azurerm_resource_group.myrg.location
+  location            = azurerm_resource_group.vth-myrg.location
   size                = "Standard_DS1_v2"
   admin_username      = "azureuser"
   network_interface_ids = [
