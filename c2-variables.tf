@@ -15,7 +15,7 @@ variable "environment" {
 variable "resoure_group_name" {
   description = "Resource Group Name"
   type = string
-  default = "vthmyrg"
+  default = "vth-myrg"
 }
 # 4. Resource Group Location
 variable "resoure_group_location" {
