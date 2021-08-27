@@ -42,7 +42,7 @@ resource "azurerm_network_interface" "myvmnic" {
 resource "azurerm_network_security_group" "vth" {
   name                = "acceptanceTestSecurityGroup1"
   location            = azurerm_resource_group.myrg.location
-  resource_group_name = azurerm_resource_group.myrg.name
+  resource_group_name = azurerm_resource_group.vth-myrg.name
   tags                = local.common_tags
 }
 
@@ -56,7 +56,7 @@ resource "azurerm_network_security_rule" "vthnsg" {
   destination_port_ranges      = ["8000", "8080"]
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
-  resource_group_name         = azurerm_resource_group.myrg.name
+  resource_group_name         = azurerm_resource_group.vth-myrg.name
   network_security_group_name = azurerm_network_security_group.vth.name
 }
 
