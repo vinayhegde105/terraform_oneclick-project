@@ -23,3 +23,8 @@ To access this follow below instructions:
        2. To accept Shopping cart app http://<VM's IP address>:8000
 
 
+Finaly don't forget to destroy. 
+   --> terraform destroy --auto-approve
+
+
+
