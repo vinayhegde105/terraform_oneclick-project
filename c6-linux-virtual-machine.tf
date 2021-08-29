@@ -41,6 +41,11 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
     source      = "apps/app"
     destination = "/tmp"
   }
+  provisioner "file" {
+    source      = "scripts/command.sh"
+    destination = "/home/azureuser/command.sh"
+  }
+
 
 # Remote-exec Provisioner-1: Copies the file to Apache Webserver /var/www/html directory
   provisioner "remote-exec" {
@@ -48,7 +53,10 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
       "sleep 120", # Will sleep for 120 seconds to ensure Apache webserver is provisioned using custom_data
       "sudo cp -r /tmp/app /var/www/html",
       "sleep 60",
-      "sudo mv /var/www/html/app/* /var/www/html"
+      "sudo mv /var/www/html/app/* /var/www/html",
+      "sudo chmod +x /home/azureuser/command.sh",
+      "cd /home/azureuser/",
+      "sudo sh command.sh"
     ]
   }
 
