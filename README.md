@@ -2,7 +2,7 @@ Terraform project implemented on Azure cloud.
 
 Requirements:
 1. Terraform installed on any OS[Windows/MAC/Linux]
-2. Azure cli installed and run az login. 
+2. Azure CLI installed and run az login. 
 
 Steps to follow:
 1. Create a new folder and clone this repository. 
