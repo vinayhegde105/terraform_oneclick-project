@@ -12,5 +12,6 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo docker-compose --version
 cd /home/azureuser
 sudo git clone https://github.com/vinayhegde105/GreatKart.git
+cd /home/azureuser/GreatKart
 sudo docker-compose up -d
 sudo dnf update -y
