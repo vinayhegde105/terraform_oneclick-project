@@ -26,33 +26,26 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
         
-      - name: 'terraform Format'
-        uses: hashicorp/terraform-github-actions@master
-        with:
-          tf_actions_version: 0.14.8
-          tf_actions_subcommand: 'fmt'
-          tf_actions_working_dir: "./terraform"
-
       - name: 'terraform init'
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.14.8
           tf_actions_subcommand: 'init'
-          tf_actions_working_dir: "./terraform"
+          tf_actions_working_dir: "."
 
       - name: 'terraform validate'
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.14.8
           tf_actions_subcommand: 'validate'
-          tf_actions_working_dir: "./terraform"
+          tf_actions_working_dir: "."
 
       - name: 'terraform plan'
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.14.8
           tf_actions_subcommand: 'plan'
-          tf_actions_working_dir: "./terraform"
+          tf_actions_working_dir: "."
 
       - name: 'terraform apply'
         if: github.ref == 'refs/heads/main'
@@ -60,4 +53,4 @@ jobs:
         with:
           tf_actions_version: 0.14.8
           tf_actions_subcommand: 'apply'
-          tf_actions_working_dir: "./terraform"
+          tf_actions_working_dir: "."
