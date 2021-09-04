@@ -23,13 +23,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: 'erraform Format'
-        uses: hashicorp/terraform-github-actions@master
-        with:
-          tf_actions_version: 0.14.8
-          tf_actions_subcommand: 'fmt'
-          tf_actions_working_dir: "./terraform"
-
       - name: 'erraform init'
         uses: hashicorp/terraform-github-actions@master
         with:
